@@ -9,7 +9,7 @@
 #import "PBFDeviceTools.h"
 #import "sys/sysctl.h"
 #import <UIKit/UIKit.h>
-#import "PBFViewTools.h"
+#import "PBFNotifyAlertViewTools.h"
 
 #define kPBFDeviceToolsCurrentVersionOpenedTimes        @"kPBFDeviceToolsCurrentVersionOpenedTime"
 #define kPBFDeviceToolsCurrentVersionRecord             @"kPBFDeviceToolsCurrentVersionRecord"
@@ -160,7 +160,7 @@
 
 //邀请用户评价
 + (void)showUerEvaluate:(UIViewController*)viewCtrl{
-    [[PBFViewTools sharedInstance] showAlterView:@"提醒" message:@"如果喜欢我们的APP，现在去给个好评吧！" parentViewCtrl:viewCtrl textAlign:NSTextAlignmentCenter backBlock:^(long btnIndex){
+    [[PBFNotifyAlertViewTools sharedInstance] showAlterView:@"提醒" message:@"如果喜欢我们的APP，现在去给个好评吧！" parentViewCtrl:viewCtrl textAlign:NSTextAlignmentCenter backBlock:^(long btnIndex){
         if(btnIndex == 1){
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kPBFDeviceToolsAppstorePath]];
         }
@@ -184,7 +184,7 @@
         if([strUserDeviceVersion isEqualToString:strAppsStoreVersion]){
             return;
         }
-        [[PBFViewTools sharedInstance] showAlterView:@"提醒" message:@"有新版本，是否更新?" parentViewCtrl:viewCtrl textAlign:NSTextAlignmentCenter backBlock:^(long btnIndex){
+        [[PBFNotifyAlertViewTools sharedInstance] showAlterView:@"提醒" message:@"有新版本，是否更新?" parentViewCtrl:viewCtrl textAlign:NSTextAlignmentCenter backBlock:^(long btnIndex){
             if(btnIndex == 0){//下次再说
                 isShowed = TRUE;
                 [[NSUserDefaults standardUserDefaults] setObject:strDeviceVersion forKey:kPBFDeviceToolsCurrentVersionRecord];

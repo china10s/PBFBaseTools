@@ -128,7 +128,7 @@
         viewLast.frame = rectEmptyp;
         [self.arryItemViews removeObject:viewLast];
         [self.arryItemViews insertObject:viewLast atIndex:0];
-        [[PBFViewTools sharedInstance] removeAllSubviews:viewLast];
+        [PBFViewTools removeAllSubviews:viewLast];
         [self.delegateDatasource assembleView:self parentView:viewLast assembleViewAtIndex:[self calculateNumber:(self.curShowIndex - 2)]];
     }
     else{//右方向
@@ -136,7 +136,7 @@
         viewfirst.frame = rectEmptyp;
         [self.arryItemViews removeObject:viewfirst];
         [self.arryItemViews addObject:viewfirst];
-        [[PBFViewTools sharedInstance] removeAllSubviews:viewfirst];
+        [PBFViewTools removeAllSubviews:viewfirst];
         [self.delegateDatasource assembleView:self parentView:viewfirst assembleViewAtIndex:[self calculateNumber:(self.curShowIndex + 2)]];
     }
     self.contentOffset = CGPointMake(self.fViewWidth+self.fGHoriGap, 0);

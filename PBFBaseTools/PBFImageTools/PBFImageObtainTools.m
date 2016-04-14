@@ -8,7 +8,7 @@
 
 #import "PBFImageObtainTools.h"
 #import <AVFoundation/AVFoundation.h>
-#import "PBFViewTools.h"
+#import "PBFNotifyAlertViewTools.h"
 
 @implementation PBFImageObtainTools
 //单例
@@ -27,7 +27,7 @@
     NSString *mediaType = AVMediaTypeVideo;
     AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:mediaType];
     if(authStatus == AVAuthorizationStatusRestricted || authStatus == AVAuthorizationStatusDenied){
-        return [[PBFViewTools sharedInstance] showSimpleAlertView:@"提醒" message:@"您的相机设置功能好像有问题哦~\r\n去“设置>隐私>相机”开一下吧" backBlock:^(long btnIndex) {} cancelButtonTitle:@"确定" otherButtonTitles:nil];
+        return [[PBFNotifyAlertViewTools sharedInstance] showSimpleAlertView:@"提醒" message:@"您的相机设置功能好像有问题哦~\r\n去“设置>隐私>相机”开一下吧" backBlock:^(long btnIndex) {} cancelButtonTitle:@"确定" otherButtonTitles:nil];
     }
     UIApplication *application = [UIApplication sharedApplication];
     UIActionSheet *sheetCell = [[UIActionSheet alloc] initWithTitle:@"选择图片" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"相机",@"本地图片", nil];

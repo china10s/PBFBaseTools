@@ -7,7 +7,7 @@
 //
 
 #import "PBFBrowserViewCtrl.h"
-#import "PBFViewTools.h"
+#import "PBFNotifyLoadingViewTools.h"
 #import "PBFNSStringTools.h"
 
 @interface PBFBrowserViewCtrl ()
@@ -126,15 +126,15 @@
 
 #pragma mark - UIWebViewDelegate
 - (void)webViewDidStartLoad:(UIWebView *)webView{
-    [[PBFViewTools sharedInstance] showLoadingView:self.view showShadow:NO];
+    [[PBFNotifyLoadingViewTools sharedInstance] showLoadingView:self.view showShadow:NO];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
-    [[PBFViewTools sharedInstance] stopLoadingView];
+    [[PBFNotifyLoadingViewTools sharedInstance] stopLoadingView];
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
-    [[PBFViewTools sharedInstance] stopLoadingView];
+    [[PBFNotifyLoadingViewTools sharedInstance] stopLoadingView];
 }
 
 #pragma mark - getters and setters

@@ -8,7 +8,7 @@
 
 #import "PBFQRCodeScanner.h"
 #import <AVFoundation/AVFoundation.h>
-#import "PBFViewTools.h"
+#import "PBFNotifyAlertViewTools.h"
 
 @interface PBFQRCodeScanner ()<AVCaptureMetadataOutputObjectsDelegate>
 @property (nonatomic,strong)NSString                        *strUrlPath;
@@ -52,7 +52,7 @@
     NSString *mediaType = AVMediaTypeVideo;
     AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:mediaType];
     if(authStatus == AVAuthorizationStatusRestricted || authStatus == AVAuthorizationStatusDenied){
-        [[PBFViewTools sharedInstance] showSimpleAlertView:@"提示" message:@"请打开相机权限" backBlock:^(long btnIndex) {
+        [[PBFNotifyAlertViewTools sharedInstance] showSimpleAlertView:@"提示" message:@"请打开相机权限" backBlock:^(long btnIndex) {
             [self.navigationController popViewControllerAnimated:TRUE];
         } cancelButtonTitle:@"确定" otherButtonTitles:nil];
         return;

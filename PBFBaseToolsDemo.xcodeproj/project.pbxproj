@@ -62,7 +62,10 @@
 		7CE477AA1CBF94D4006B6716 /* PBFUITextFieldStratageMinlength.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE477761CBF94D4006B6716 /* PBFUITextFieldStratageMinlength.m */; };
 		7CE477AB1CBF94D4006B6716 /* PBFUITextFieldStratageRegex.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE477781CBF94D4006B6716 /* PBFUITextFieldStratageRegex.m */; };
 		7CE477AC1CBF94D4006B6716 /* PBFUITextFieldVerify.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE4777A1CBF94D4006B6716 /* PBFUITextFieldVerify.m */; };
-		7CE477AD1CBF94D4006B6716 /* PBFViewTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE4777D1CBF94D4006B6716 /* PBFViewTools.m */; };
+		7CE477B21CBF9F2C006B6716 /* PBFNotifyLoadingViewTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE477B11CBF9F2C006B6716 /* PBFNotifyLoadingViewTools.m */; };
+		7CE477B51CBF9F83006B6716 /* PBFNotifyToastViewTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE477B41CBF9F83006B6716 /* PBFNotifyToastViewTools.m */; };
+		7CE477B81CBF9FA8006B6716 /* PBFNotifyAlertViewTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE477B71CBF9FA8006B6716 /* PBFNotifyAlertViewTools.m */; };
+		7CE477C01CBFA395006B6716 /* PBFViewTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE477BF1CBFA395006B6716 /* PBFViewTools.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -195,8 +198,15 @@
 		7CE477781CBF94D4006B6716 /* PBFUITextFieldStratageRegex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBFUITextFieldStratageRegex.m; sourceTree = "<group>"; };
 		7CE477791CBF94D4006B6716 /* PBFUITextFieldVerify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBFUITextFieldVerify.h; sourceTree = "<group>"; };
 		7CE4777A1CBF94D4006B6716 /* PBFUITextFieldVerify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBFUITextFieldVerify.m; sourceTree = "<group>"; };
-		7CE4777C1CBF94D4006B6716 /* PBFViewTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBFViewTools.h; sourceTree = "<group>"; };
-		7CE4777D1CBF94D4006B6716 /* PBFViewTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBFViewTools.m; sourceTree = "<group>"; };
+		7CE477AE1CBF9670006B6716 /* PBFBaseTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PBFBaseTools.h; sourceTree = "<group>"; };
+		7CE477B01CBF9F2C006B6716 /* PBFNotifyLoadingViewTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBFNotifyLoadingViewTools.h; sourceTree = "<group>"; };
+		7CE477B11CBF9F2C006B6716 /* PBFNotifyLoadingViewTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBFNotifyLoadingViewTools.m; sourceTree = "<group>"; };
+		7CE477B31CBF9F83006B6716 /* PBFNotifyToastViewTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBFNotifyToastViewTools.h; sourceTree = "<group>"; };
+		7CE477B41CBF9F83006B6716 /* PBFNotifyToastViewTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBFNotifyToastViewTools.m; sourceTree = "<group>"; };
+		7CE477B61CBF9FA8006B6716 /* PBFNotifyAlertViewTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBFNotifyAlertViewTools.h; sourceTree = "<group>"; };
+		7CE477B71CBF9FA8006B6716 /* PBFNotifyAlertViewTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBFNotifyAlertViewTools.m; sourceTree = "<group>"; };
+		7CE477BE1CBFA395006B6716 /* PBFViewTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBFViewTools.h; sourceTree = "<group>"; };
+		7CE477BF1CBFA395006B6716 /* PBFViewTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBFViewTools.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,6 +310,7 @@
 		7CE477061CBF94D3006B6716 /* PBFBaseTools */ = {
 			isa = PBXGroup;
 			children = (
+				7CE477BD1CBFA395006B6716 /* PBFViewTools */,
 				7CE477071CBF94D3006B6716 /* PBFBasisTools */,
 				7CE477121CBF94D3006B6716 /* PBFBrowserTools */,
 				7CE477171CBF94D3006B6716 /* PBFButtonVerifyCode */,
@@ -308,8 +319,8 @@
 				7CE477251CBF94D3006B6716 /* PBFDeviceTools */,
 				7CE477281CBF94D3006B6716 /* PBFErrorTools */,
 				7CE4772B1CBF94D3006B6716 /* PBFImageTools */,
-				7CE477301CBF94D3006B6716 /* PBFLabel */,
-				7CE477351CBF94D3006B6716 /* PBFLoadingPage */,
+				7CE477301CBF94D3006B6716 /* PBFLabelTools */,
+				7CE477351CBF94D3006B6716 /* PBFAppLoadingPage */,
 				7CE477381CBF94D3006B6716 /* PBFNotificationTopBar */,
 				7CE4773B1CBF94D3006B6716 /* PBFPopInputView */,
 				7CE4773E1CBF94D3006B6716 /* PBFProgressCircleView */,
@@ -319,8 +330,9 @@
 				7CE477611CBF94D3006B6716 /* PBFSpringEffectAlertView */,
 				7CE477641CBF94D3006B6716 /* PBFTableViewTools */,
 				7CE4776B1CBF94D4006B6716 /* PBFTabPageFlow */,
-				7CE4776E1CBF94D4006B6716 /* PBFTextField */,
-				7CE4777B1CBF94D4006B6716 /* PBFViwTools */,
+				7CE4776E1CBF94D4006B6716 /* PBFTextFieldTools */,
+				7CE477AF1CBF9EE6006B6716 /* PBFNotifyTools */,
+				7CE477AE1CBF9670006B6716 /* PBFBaseTools.h */,
 			);
 			path = PBFBaseTools;
 			sourceTree = "<group>";
@@ -421,7 +433,7 @@
 			path = PBFImageTools;
 			sourceTree = "<group>";
 		};
-		7CE477301CBF94D3006B6716 /* PBFLabel */ = {
+		7CE477301CBF94D3006B6716 /* PBFLabelTools */ = {
 			isa = PBXGroup;
 			children = (
 				7CE477311CBF94D3006B6716 /* PBFLabelCountBackwards.h */,
@@ -429,15 +441,17 @@
 				7CE477331CBF94D3006B6716 /* PBFLabelCountBackwardsSimple.h */,
 				7CE477341CBF94D3006B6716 /* PBFLabelCountBackwardsSimple.m */,
 			);
+			name = PBFLabelTools;
 			path = PBFLabel;
 			sourceTree = "<group>";
 		};
-		7CE477351CBF94D3006B6716 /* PBFLoadingPage */ = {
+		7CE477351CBF94D3006B6716 /* PBFAppLoadingPage */ = {
 			isa = PBXGroup;
 			children = (
 				7CE477361CBF94D3006B6716 /* PBFAPPLoadingPages.h */,
 				7CE477371CBF94D3006B6716 /* PBFAPPLoadingPages.m */,
 			);
+			name = PBFAppLoadingPage;
 			path = PBFLoadingPage;
 			sourceTree = "<group>";
 		};
@@ -556,9 +570,10 @@
 			path = PBFTabPageFlow;
 			sourceTree = "<group>";
 		};
-		7CE4776E1CBF94D4006B6716 /* PBFTextField */ = {
+		7CE4776E1CBF94D4006B6716 /* PBFTextFieldTools */ = {
 			isa = PBXGroup;
 			children = (
+				7CE477B91CBFA362006B6716 /* PBFViwTools */,
 				7CE4776F1CBF94D4006B6716 /* PBFUITextFieldAdditionFinishedBtn.h */,
 				7CE477701CBF94D4006B6716 /* PBFUITextFieldAdditionFinishedBtn.m */,
 				7CE477711CBF94D4006B6716 /* PBFUITextFieldAdditionPickup.h */,
@@ -572,15 +587,38 @@
 				7CE477791CBF94D4006B6716 /* PBFUITextFieldVerify.h */,
 				7CE4777A1CBF94D4006B6716 /* PBFUITextFieldVerify.m */,
 			);
+			name = PBFTextFieldTools;
 			path = PBFTextField;
 			sourceTree = "<group>";
 		};
-		7CE4777B1CBF94D4006B6716 /* PBFViwTools */ = {
+		7CE477AF1CBF9EE6006B6716 /* PBFNotifyTools */ = {
 			isa = PBXGroup;
 			children = (
-				7CE4777C1CBF94D4006B6716 /* PBFViewTools.h */,
-				7CE4777D1CBF94D4006B6716 /* PBFViewTools.m */,
+				7CE477B01CBF9F2C006B6716 /* PBFNotifyLoadingViewTools.h */,
+				7CE477B11CBF9F2C006B6716 /* PBFNotifyLoadingViewTools.m */,
+				7CE477B31CBF9F83006B6716 /* PBFNotifyToastViewTools.h */,
+				7CE477B41CBF9F83006B6716 /* PBFNotifyToastViewTools.m */,
+				7CE477B61CBF9FA8006B6716 /* PBFNotifyAlertViewTools.h */,
+				7CE477B71CBF9FA8006B6716 /* PBFNotifyAlertViewTools.m */,
 			);
+			path = PBFNotifyTools;
+			sourceTree = "<group>";
+		};
+		7CE477B91CBFA362006B6716 /* PBFViwTools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = PBFViwTools;
+			path = PBFBaseTools/PBFViwTools;
+			sourceTree = SOURCE_ROOT;
+		};
+		7CE477BD1CBFA395006B6716 /* PBFViewTools */ = {
+			isa = PBXGroup;
+			children = (
+				7CE477BE1CBFA395006B6716 /* PBFViewTools.h */,
+				7CE477BF1CBFA395006B6716 /* PBFViewTools.m */,
+			);
+			name = PBFViewTools;
 			path = PBFViwTools;
 			sourceTree = "<group>";
 		};
@@ -715,18 +753,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CE477861CBF94D4006B6716 /* PBFButtonVerifyCode.m in Sources */,
+				7CE477B21CBF9F2C006B6716 /* PBFNotifyLoadingViewTools.m in Sources */,
 				7CE477921CBF94D4006B6716 /* PBFNotificationTopBar.m in Sources */,
 				7CE476D81CBF945A006B6716 /* ViewController.m in Sources */,
 				7CE477A71CBF94D4006B6716 /* PBFUITextFieldAdditionFinishedBtn.m in Sources */,
 				7CE477AA1CBF94D4006B6716 /* PBFUITextFieldStratageMinlength.m in Sources */,
-				7CE477AD1CBF94D4006B6716 /* PBFViewTools.m in Sources */,
 				7CE477A91CBF94D4006B6716 /* PBFUITextFieldStratageMaxLength.m in Sources */,
 				7CE477811CBF94D4006B6716 /* PBFDateTools.m in Sources */,
 				7CE4778F1CBF94D4006B6716 /* PBFLabelCountBackwards.m in Sources */,
+				7CE477B51CBF9F83006B6716 /* PBFNotifyToastViewTools.m in Sources */,
 				7CE4778A1CBF94D4006B6716 /* PBFDesEncrypt.m in Sources */,
 				7CE477AC1CBF94D4006B6716 /* PBFUITextFieldVerify.m in Sources */,
 				7CE4778B1CBF94D4006B6716 /* PBFDeviceTools.m in Sources */,
 				7CE476D51CBF945A006B6716 /* AppDelegate.m in Sources */,
+				7CE477B81CBF9FA8006B6716 /* PBFNotifyAlertViewTools.m in Sources */,
 				7CE477841CBF94D4006B6716 /* PBFBrowserTools.m in Sources */,
 				7CE477A41CBF94D4006B6716 /* UITableView+EmptyImage.m in Sources */,
 				7CE4779B1CBF94D4006B6716 /* qrencode.c in Sources */,
@@ -741,6 +781,7 @@
 				7CE477931CBF94D4006B6716 /* PBFPopInputView.m in Sources */,
 				7CE4778E1CBF94D4006B6716 /* PBFImageProminent.m in Sources */,
 				7CE477981CBF94D4006B6716 /* mask.c in Sources */,
+				7CE477C01CBFA395006B6716 /* PBFViewTools.m in Sources */,
 				7CE477991CBF94D4006B6716 /* mmask.c in Sources */,
 				7CE477A81CBF94D4006B6716 /* PBFUITextFieldAdditionPickup.m in Sources */,
 				7CE4779D1CBF94D4006B6716 /* qrspec.c in Sources */,
