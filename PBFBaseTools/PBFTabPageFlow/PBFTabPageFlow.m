@@ -40,8 +40,8 @@
     self.tabBarItem.title = strName;
     self.navigationItem.title = strName;
     self.INWidth = [UIScreen mainScreen].bounds.size.width/[self.ARRCtrl count];
-    self.colBtnBackground = [PBFColorTools sharedInstance].redColorSystem;
-    self.colBtnSelForeColor = [PBFColorTools sharedInstance].redColorSystem;
+    self.colBtnBackground = [UIColor colorWithRed:239/255.0f green:49/255.0f blue:24/255.0f alpha:1];
+    self.colBtnSelForeColor = [UIColor colorWithRed:239/255.0f green:49/255.0f blue:24/255.0f alpha:1];
     self.colBtnUnSelForeColor = [UIColor blackColor];
     self.colFlagBackground = [UIColor whiteColor];
     self.colFlagForeColor = [UIColor whiteColor];

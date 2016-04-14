@@ -102,11 +102,12 @@
         NSString* strMinutesPath = [NSString stringWithFormat:@"%@%@分",strHoursPath,strMinutes];
         NSString* strSecondsPath = [NSString stringWithFormat:@"%@%@秒%@",strMinutesPath,strSeconds,self.strFormatStringAfter];
         
+        UIColor *colorRed = [UIColor colorWithRed:239/255.0f green:49/255.0f blue:24/255.0f alpha:1];
         NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:strSecondsPath];
-        [attString addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange([self.strFormatStringFore length], [strDays length])];
-        [attString addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange([strDaysPath length], [strHours length])];
-        [attString addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange([strHoursPath length], [strMinutes length])];
-        [attString addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange([strMinutesPath length], [strSeconds length])];
+        [attString addAttribute:NSForegroundColorAttributeName value:colorRed range:NSMakeRange([self.strFormatStringFore length], [strDays length])];
+        [attString addAttribute:NSForegroundColorAttributeName value:colorRed range:NSMakeRange([strDaysPath length], [strHours length])];
+        [attString addAttribute:NSForegroundColorAttributeName value:colorRed range:NSMakeRange([strHoursPath length], [strMinutes length])];
+        [attString addAttribute:NSForegroundColorAttributeName value:colorRed range:NSMakeRange([strMinutesPath length], [strSeconds length])];
         
         [self setAttributedText:attString];
     }

@@ -63,7 +63,7 @@
     else{
         [btnDisappear setTitle:@"立即体验" forState:UIControlStateNormal];
         [btnDisappear setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [btnDisappear setBackgroundColor:[UIColor redColor]];
+        [btnDisappear setBackgroundColor:[UIColor colorWithRed:239/255.0f green:49/255.0f blue:24/255.0f alpha:1]];
     }
     if (self.imgEnterButtonSelect) {
         [btnDisappear setBackgroundImage:self.imgEnterButtonSelect forState:UIControlStateSelected];
@@ -123,7 +123,7 @@
         _pageCtrl.numberOfPages = [self.ARRPagePaths count];
         _pageCtrl.currentPage = 0;
         _pageCtrl.pageIndicatorTintColor = [UIColor grayColor];
-        _pageCtrl.currentPageIndicatorTintColor = [UIColor redColor];
+        _pageCtrl.currentPageIndicatorTintColor = [UIColor colorWithRed:239/255.0f green:49/255.0f blue:24/255.0f alpha:1];
     }
     return _pageCtrl;
 }

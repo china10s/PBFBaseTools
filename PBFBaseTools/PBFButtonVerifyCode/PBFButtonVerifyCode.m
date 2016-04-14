@@ -7,7 +7,7 @@
 //
 
 #import "PBFButtonVerifyCode.h"
-#import "PBFConvert.h"
+#import "PBFColorTools.h"
 
 @interface PBFButtonVerifyCode()
 //倒数计时器
@@ -30,7 +30,7 @@
     [self setTitle:self.strBtnNormalTitle forState:UIControlStateNormal];
     [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
-    [self setBackgroundImage:[PBFConvert createImageWithColor:[UIColor redColor] forState:UIControlStateNormal];
+    [self setBackgroundImage:[PBFColorTools createImageWithColor:[UIColor colorWithRed:239/255.0f green:49/255.0f blue:24/255.0f alpha:1]] forState:UIControlStateNormal];
     
     [self addTarget:self action:@selector(clickWork:) forControlEvents:UIControlEventTouchUpInside];
     return self;

@@ -35,7 +35,7 @@
 }
 
 - (void)popOutTextField:(UIViewController*)ctrl strTitle:(NSString*)strTitle strMess:(NSString*)strMess cancelButtonTitle:(NSString*)cancelButtonTitle otherButtonTitle:(NSString*)otherButtonTitle blockTextField:(void(^)(UITextField *))blockTextField blockFinish:(void(^)(NSString* ))blockFinish{
-    if ([[PBFDeviceTools sharedInstance] getSDKVersion] > 8.0f) {
+    if ([PBFDeviceTools  getSDKVersion] > 8.0f) {
         __block UITextField* textFieldTmp = nil;
         UIAlertController *ctrlAlertConfirm = [UIAlertController alertControllerWithTitle:strTitle message:strMess preferredStyle:UIAlertControllerStyleAlert];
         [ctrlAlertConfirm addTextFieldWithConfigurationHandler:^(UITextField* textField){

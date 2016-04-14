@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface PBFColorTools : NSObject
 //CGColor与CGColorRef之间的转换

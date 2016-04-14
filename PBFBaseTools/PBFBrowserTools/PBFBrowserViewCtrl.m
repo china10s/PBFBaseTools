@@ -8,7 +8,6 @@
 
 #import "PBFBrowserViewCtrl.h"
 #import "PBFViewTools.h"
-#import "BOYHandlerUserManager.h"
 #import "PBFNSStringTools.h"
 
 @interface PBFBrowserViewCtrl ()
@@ -138,47 +137,11 @@
     [[PBFViewTools sharedInstance] stopLoadingView];
 }
 
-//登录 jsLogin() 和注册 jsRegister()
-#pragma mark - PBFBrowserViewCtrlDelegate
-//JS返回函数
-- (BOOL)jsFunctionDo:(NSString*)strJsFunction{
-    if ([strJsFunction isEqualToString:@"jsLogin"]) {//弹出登陆界面
-        [[BOYHandlerUserManager sharedInstance] appendLoginView:self info:nil block:^(BOYModelUserInfo *userInfo) {
-            [self reloadAddUserInfo];
-        } blockUnLogin:^{
-            
-        }];
-        return FALSE;
-    }
-    else if ([PBFNSStringTools isEndWithString:@"jsRegister" strText:strJsFunction]){//弹出注册界面
-        [[BOYHandlerUserManager sharedInstance] appendRegisterView:self info:nil block:^(BOYModelUserInfo * userInfo) {
-            [self reloadAddUserInfo];
-        } blockUnLogin:^{
-            
-        }];
-        return FALSE;
-    }
-    else{
-        return TRUE;
-    }
-}
-
-//成功，重新加载原来的Url，带上登录态
-- (void)reloadAddUserInfo{
-    NSString *strUrl = self.viewWeb.request.URL.absoluteString;
-    strUrl = [[BOYHandlerUserManager sharedInstance] getUrlPathWithUserInfo:strUrl];
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:strUrl]];
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.viewWeb loadRequest:request];
-    });
-}
-
 #pragma mark - getters and setters
 - (UIWebView*)viewWeb{
     if (!_viewWeb) {
         _viewWeb = [[UIWebView alloc] initWithFrame:[UIScreen mainScreen].bounds];
         [_viewWeb setTranslatesAutoresizingMaskIntoConstraints:NO];
-        _viewWeb.delegate = self;
         _viewWeb.scalesPageToFit = TRUE;
         //隐藏掉左右滚动条
         UIScrollView *tempView=(UIScrollView *)[_viewWeb.subviews objectAtIndex:0];

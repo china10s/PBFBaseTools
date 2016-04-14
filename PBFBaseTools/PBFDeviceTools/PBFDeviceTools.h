@@ -49,7 +49,7 @@ typedef enum{
 
 #pragma mark - 机器是否接受消息推送开关
 + (BOOL)getIsAllowPushMessage;
-+ (void)setIsAllowPushMessage:(BOOL)isAllowPush
++ (void)setIsAllowPushMessage:(BOOL)isAllowPush;
 
 
 @end

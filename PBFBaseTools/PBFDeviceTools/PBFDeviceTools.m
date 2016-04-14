@@ -9,6 +9,7 @@
 #import "PBFDeviceTools.h"
 #import "sys/sysctl.h"
 #import <UIKit/UIKit.h>
+#import "PBFViewTools.h"
 
 #define kPBFDeviceToolsCurrentVersionOpenedTimes        @"kPBFDeviceToolsCurrentVersionOpenedTime"
 #define kPBFDeviceToolsCurrentVersionRecord             @"kPBFDeviceToolsCurrentVersionRecord"
@@ -129,7 +130,7 @@
 //处理用户评价策略
 + (void)handlerUerEvaluate:(UIViewController*)viewCtrl{
     NSString *strDeviceVersion = [self getDeviceCurVersion];
-    NSData * dataParam = [[NSUserDefaults standardUserDefaults] objectForKey:kPBFDeviceToolsCurrentVersionOpenedTime];
+    NSData * dataParam = [[NSUserDefaults standardUserDefaults] objectForKey:kPBFDeviceToolsCurrentVersionOpenedTimes];
     NSMutableDictionary * dicParam= [[NSKeyedUnarchiver unarchiveObjectWithData:dataParam] mutableCopy];
     if (!dicParam) {
         dicParam = [[NSMutableDictionary alloc] init];
@@ -152,7 +153,7 @@
         }
     }
     
-    [[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:dicParam] forKey:kPBFDeviceToolsCurrentVersionOpenedTime];
+    [[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:dicParam] forKey:kPBFDeviceToolsCurrentVersionOpenedTimes];
     
     return;
 }
@@ -226,14 +227,12 @@
     if (![defaults valueForKey:kPBFDeviceToolsIsAllowPushMessage]) {//还未保存过设置结果
         [self setIsAllowPushMessage:TRUE];
     }
-    isAllowPushMessage = [defaults boolForKey:kPBFDeviceToolsIsAllowPushMessage];
-    return isAllowPushMessage ;
+    return [defaults boolForKey:kPBFDeviceToolsIsAllowPushMessage];
 }
 
 + (void)setIsAllowPushMessage:(BOOL)isAllowPush{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setBool:isAllowPush forKey:kPBFDeviceToolsIsAllowPushMessage];
-    isAllowPushMessage = isAllowPush;
 }
 
 
