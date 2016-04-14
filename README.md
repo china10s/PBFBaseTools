@@ -23,4 +23,3 @@ License
 
 Licensed under MIT 'cause why not. 
 
-Colour palette from [ColourLovers](http://www.colourlovers.com/palette/1916536/SUNSET_ANGELS).
