@@ -18,7 +18,7 @@
         [strStartString length] > [strWholeString length]) {
         return FALSE;
     }
-    long lWholeLength = [strWholeString length];
+//    long lWholeLength = [strWholeString length];
     long lStartLength = [strStartString length];
     NSString *strSubString = [strWholeString substringToIndex:lStartLength];
     if ([strSubString isEqualToString:strStartString]) {

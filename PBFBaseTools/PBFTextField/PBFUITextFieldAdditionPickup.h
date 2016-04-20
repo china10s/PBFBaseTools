@@ -10,7 +10,7 @@
 
 @class UITextField;
 
-@interface PBFUITextFieldAdditionPickup : NSObject
+@interface PBFUITextFieldAdditionPickup : NSObject<UIPickerViewDataSource,UIPickerViewDelegate>
 - (instancetype)initWithSelRange:(NSArray*)range blockSel:(void(^)(long))blockSel;
 - (void)additionComponent:(UITextField*)textField;
 @end

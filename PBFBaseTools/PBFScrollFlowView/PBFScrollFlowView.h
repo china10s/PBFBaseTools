@@ -10,7 +10,7 @@
 
 @protocol PBFScrollFlowViewDataSource,PBFScrollFlowViewDelegate;
 
-@interface PBFScrollFlowView : UIScrollView
+@interface PBFScrollFlowView : UIScrollView<UIScrollViewDelegate>
 @property (nonatomic,weak)id<PBFScrollFlowViewDataSource>                       delegateDatasource;
 @property (nonatomic,weak)id<PBFScrollFlowViewDelegate>                         delegateSelf;
 

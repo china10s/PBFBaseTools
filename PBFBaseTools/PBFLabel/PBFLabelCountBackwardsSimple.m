@@ -91,7 +91,7 @@
         int iMinutes = (int)(self.lGap - iDays*3600*24 - iHours*3600)/60;
         int iSeconds = (int)(self.lGap - iDays*3600*24 - iHours*3600 - iMinutes*60);
         
-        NSString* strDays = [NSString stringWithFormat:@"%d",iDays];
+//        NSString* strDays = [NSString stringWithFormat:@"%d",iDays];
         NSString* strHours = [NSString stringWithFormat:@"%02d",iHours];
         NSString* strMinutes = [NSString stringWithFormat:@"%02d",iMinutes];
         NSString* strSeconds = [NSString stringWithFormat:@"%02d",iSeconds];

@@ -9,7 +9,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PBFTabPageFlow : UIViewController
+@interface PBFTabPageFlow : UIViewController<UIScrollViewDelegate>
 //按钮背景色
 @property (nonatomic,strong)UIColor                 *colBtnBackground;
 //按钮选中前景色
@@ -22,7 +22,7 @@
 @property (nonatomic,strong)UIColor                 *colFlagForeColor;
 
 //当前页
-@property (nonatomic,assign)int                     iCurPageIndex;
+@property (nonatomic,assign)long                    iCurPageIndex;
 
 //初始化
 - (instancetype)initWithControl:(NSString*)strName;

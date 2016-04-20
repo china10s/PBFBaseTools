@@ -21,7 +21,7 @@
 - (UIViewController*)parentViewCtrl;
 @end
 
-@interface PBFImageObtainTools : NSObject
+@interface PBFImageObtainTools : NSObject<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 //单例
 + (instancetype)sharedInstance;
 //显示
