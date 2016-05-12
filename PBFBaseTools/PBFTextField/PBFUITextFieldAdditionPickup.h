@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class UITextField;
+@protocol UIPickerViewDataSource,UIPickerViewDelegate;
 
 @interface PBFUITextFieldAdditionPickup : NSObject<UIPickerViewDataSource,UIPickerViewDelegate>
 - (instancetype)initWithSelRange:(NSArray*)range blockSel:(void(^)(long))blockSel;

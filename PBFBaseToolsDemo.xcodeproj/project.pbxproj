@@ -66,6 +66,8 @@
 		7CE477B51CBF9F83006B6716 /* PBFNotifyToastViewTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE477B41CBF9F83006B6716 /* PBFNotifyToastViewTools.m */; };
 		7CE477B81CBF9FA8006B6716 /* PBFNotifyAlertViewTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE477B71CBF9FA8006B6716 /* PBFNotifyAlertViewTools.m */; };
 		7CE477C01CBFA395006B6716 /* PBFViewTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE477BF1CBFA395006B6716 /* PBFViewTools.m */; };
+		7CFE27C01CE4699400FB11C5 /* PBFORMTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFE27BF1CE4699400FB11C5 /* PBFORMTools.m */; };
+		7CFE27C21CE48BB400FB11C5 /* PBFORMToolsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFE27C11CE48BB400FB11C5 /* PBFORMToolsTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -207,6 +209,9 @@
 		7CE477B71CBF9FA8006B6716 /* PBFNotifyAlertViewTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBFNotifyAlertViewTools.m; sourceTree = "<group>"; };
 		7CE477BE1CBFA395006B6716 /* PBFViewTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBFViewTools.h; sourceTree = "<group>"; };
 		7CE477BF1CBFA395006B6716 /* PBFViewTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBFViewTools.m; sourceTree = "<group>"; };
+		7CFE27BE1CE4699400FB11C5 /* PBFORMTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBFORMTools.h; sourceTree = "<group>"; };
+		7CFE27BF1CE4699400FB11C5 /* PBFORMTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBFORMTools.m; sourceTree = "<group>"; };
+		7CFE27C11CE48BB400FB11C5 /* PBFORMToolsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBFORMToolsTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				7CE476EA1CBF945A006B6716 /* PBFBaseToolsDemoTests.m */,
+				7CFE27C11CE48BB400FB11C5 /* PBFORMToolsTests.m */,
 				7CE476EC1CBF945A006B6716 /* Info.plist */,
 			);
 			path = PBFBaseToolsDemoTests;
@@ -310,6 +316,7 @@
 		7CE477061CBF94D3006B6716 /* PBFBaseTools */ = {
 			isa = PBXGroup;
 			children = (
+				7CFE27BD1CE4698A00FB11C5 /* PBFORMTools */,
 				7CE477BD1CBFA395006B6716 /* PBFViewTools */,
 				7CE477071CBF94D3006B6716 /* PBFBasisTools */,
 				7CE477121CBF94D3006B6716 /* PBFBrowserTools */,
@@ -622,6 +629,15 @@
 			path = PBFViwTools;
 			sourceTree = "<group>";
 		};
+		7CFE27BD1CE4698A00FB11C5 /* PBFORMTools */ = {
+			isa = PBXGroup;
+			children = (
+				7CFE27BE1CE4699400FB11C5 /* PBFORMTools.h */,
+				7CFE27BF1CE4699400FB11C5 /* PBFORMTools.m */,
+			);
+			path = PBFORMTools;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -758,6 +774,7 @@
 				7CE476D81CBF945A006B6716 /* ViewController.m in Sources */,
 				7CE477A71CBF94D4006B6716 /* PBFUITextFieldAdditionFinishedBtn.m in Sources */,
 				7CE477AA1CBF94D4006B6716 /* PBFUITextFieldStratageMinlength.m in Sources */,
+				7CFE27C01CE4699400FB11C5 /* PBFORMTools.m in Sources */,
 				7CE477A91CBF94D4006B6716 /* PBFUITextFieldStratageMaxLength.m in Sources */,
 				7CE477811CBF94D4006B6716 /* PBFDateTools.m in Sources */,
 				7CE4778F1CBF94D4006B6716 /* PBFLabelCountBackwards.m in Sources */,
@@ -814,6 +831,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CE476EB1CBF945A006B6716 /* PBFBaseToolsDemoTests.m in Sources */,
+				7CFE27C21CE48BB400FB11C5 /* PBFORMToolsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
