@@ -19,11 +19,12 @@
 
 //主类
 @interface PBFORMToolsTestModelUser : NSObject
-@property (nonatomic,strong)NSMutableDictionary     *KPBFORMToolsDicArrayName;
-@property (nonatomic,strong)NSString                *name;
-@property (nonatomic,strong)NSNumber                *code;
-@property (nonatomic,strong)NSMutableArray          *followers;
-@property (nonatomic,strong)NSArray                 *date;
+@property (nonatomic,strong)NSMutableDictionary                     *KPBFORMToolsDicArrayName;
+@property (nonatomic,strong)NSString                                *name;
+@property (nonatomic,strong)NSNumber                                *code;
+@property (nonatomic,strong)NSMutableArray                          *followers;
+@property (nonatomic,strong)NSArray                                 *date;
+@property (nonatomic,strong)PBFORMToolsTestModelFollower            *mainFollower;
 @end
 @implementation PBFORMToolsTestModelUser
 - (instancetype)init{
@@ -68,9 +69,23 @@
     //date
     NSArray *arrDates = [NSArray arrayWithObjects:@"hello",@"world", nil];
     [dicAttUser setValue:arrDates forKey:@"date"];
-    //工作
+    //mainFollower
+    NSMutableDictionary *dicAttFollowerMain = [[NSMutableDictionary alloc] init];
+    [dicAttFollowerMain setValue:@"王五" forKey:@"name"];
+    [dicAttFollowerMain setValue:[NSNumber numberWithDouble:789.23] forKey:@"code"];
+    [dicAttUser setValue:dicAttFollowerMain forKey:@"mainFollower"];
+    
+    //work
     PBFORMToolsTestModelUser *userInfo = [[PBFORMToolsTestModelUser alloc] init];
     [PBFORMTools assembleDictionaryData:userInfo objRes:dicAttUser];
+    
+    //断言
+    XCTAssertEqual(userInfo.name, @"朱林",@"name error");
+    XCTAssertEqual([userInfo.code integerValue], 123456,@"code error");
+    XCTAssertEqual([userInfo.followers count],2 ,@"followers error");
+    XCTAssertEqual([userInfo.date count],2 ,@"date error");
+    XCTAssertEqual(userInfo.mainFollower.name, @"王五",@"mainFollower.name error");
+    XCTAssertEqual([userInfo.mainFollower.code doubleValue], 789.23,@"mainFollower.code error");
 }
 
 - (void)testExample {
