@@ -9,6 +9,9 @@
 #ifndef PBFBaseTools_h
 #define PBFBaseTools_h
 
+#pragma mark - PBFViewTools UIView宏定义信息
+#import "PBFViewMacro.h"
+
 #pragma mark - PBFViewTools UIView工具
 #import "PBFViewTools.h"
 
