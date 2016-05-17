@@ -15,4 +15,7 @@
 //清除所有子View
 + (void)removeAllSubviews:(UIView*)parentView;
 
+//为主View获取合适的CGRect
++ (CGRect)getFitRectForMainView:(UIViewController*)viewCtrl;
+
 @end
