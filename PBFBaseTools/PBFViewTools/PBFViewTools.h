@@ -8,6 +8,8 @@
 //UIView工具
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
 @class UIView;
 
 @interface PBFViewTools : NSObject

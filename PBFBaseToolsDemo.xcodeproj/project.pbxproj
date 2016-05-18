@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C1268EC1CEC0B270012AE57 /* PBFViewTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1268EB1CEC0B270012AE57 /* PBFViewTools.m */; };
 		7CE476D21CBF945A006B6716 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE476D11CBF945A006B6716 /* main.m */; };
 		7CE476D51CBF945A006B6716 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE476D41CBF945A006B6716 /* AppDelegate.m */; };
 		7CE476D81CBF945A006B6716 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE476D71CBF945A006B6716 /* ViewController.m */; };
@@ -65,7 +66,6 @@
 		7CE477B21CBF9F2C006B6716 /* PBFNotifyLoadingViewTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE477B11CBF9F2C006B6716 /* PBFNotifyLoadingViewTools.m */; };
 		7CE477B51CBF9F83006B6716 /* PBFNotifyToastViewTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE477B41CBF9F83006B6716 /* PBFNotifyToastViewTools.m */; };
 		7CE477B81CBF9FA8006B6716 /* PBFNotifyAlertViewTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE477B71CBF9FA8006B6716 /* PBFNotifyAlertViewTools.m */; };
-		7CE477C01CBFA395006B6716 /* PBFViewTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE477BF1CBFA395006B6716 /* PBFViewTools.m */; };
 		7CFE27C01CE4699400FB11C5 /* PBFORMTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFE27BF1CE4699400FB11C5 /* PBFORMTools.m */; };
 		7CFE27C21CE48BB400FB11C5 /* PBFORMToolsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CFE27C11CE48BB400FB11C5 /* PBFORMToolsTests.m */; };
 /* End PBXBuildFile section */
@@ -88,6 +88,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7C1268EA1CEC0B270012AE57 /* PBFViewTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBFViewTools.h; sourceTree = "<group>"; };
+		7C1268EB1CEC0B270012AE57 /* PBFViewTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBFViewTools.m; sourceTree = "<group>"; };
 		7CE476CD1CBF945A006B6716 /* PBFBaseToolsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PBFBaseToolsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CE476D11CBF945A006B6716 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7CE476D31CBF945A006B6716 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -207,8 +209,6 @@
 		7CE477B41CBF9F83006B6716 /* PBFNotifyToastViewTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBFNotifyToastViewTools.m; sourceTree = "<group>"; };
 		7CE477B61CBF9FA8006B6716 /* PBFNotifyAlertViewTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBFNotifyAlertViewTools.h; sourceTree = "<group>"; };
 		7CE477B71CBF9FA8006B6716 /* PBFNotifyAlertViewTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBFNotifyAlertViewTools.m; sourceTree = "<group>"; };
-		7CE477BE1CBFA395006B6716 /* PBFViewTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBFViewTools.h; sourceTree = "<group>"; };
-		7CE477BF1CBFA395006B6716 /* PBFViewTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBFViewTools.m; sourceTree = "<group>"; };
 		7CFE27BE1CE4699400FB11C5 /* PBFORMTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBFORMTools.h; sourceTree = "<group>"; };
 		7CFE27BF1CE4699400FB11C5 /* PBFORMTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBFORMTools.m; sourceTree = "<group>"; };
 		7CFE27C11CE48BB400FB11C5 /* PBFORMToolsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBFORMToolsTests.m; sourceTree = "<group>"; };
@@ -239,6 +239,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C1268E91CEC0B270012AE57 /* PBFViewTools */ = {
+			isa = PBXGroup;
+			children = (
+				7C1268EA1CEC0B270012AE57 /* PBFViewTools.h */,
+				7C1268EB1CEC0B270012AE57 /* PBFViewTools.m */,
+			);
+			path = PBFViewTools;
+			sourceTree = "<group>";
+		};
 		7CE476C41CBF945A006B6716 = {
 			isa = PBXGroup;
 			children = (
@@ -316,8 +325,8 @@
 		7CE477061CBF94D3006B6716 /* PBFBaseTools */ = {
 			isa = PBXGroup;
 			children = (
+				7C1268E91CEC0B270012AE57 /* PBFViewTools */,
 				7CFE27BD1CE4698A00FB11C5 /* PBFORMTools */,
-				7CE477BD1CBFA395006B6716 /* PBFViewTools */,
 				7CE477071CBF94D3006B6716 /* PBFBasisTools */,
 				7CE477121CBF94D3006B6716 /* PBFBrowserTools */,
 				7CE477171CBF94D3006B6716 /* PBFButtonVerifyCode */,
@@ -619,16 +628,6 @@
 			path = PBFBaseTools/PBFViwTools;
 			sourceTree = SOURCE_ROOT;
 		};
-		7CE477BD1CBFA395006B6716 /* PBFViewTools */ = {
-			isa = PBXGroup;
-			children = (
-				7CE477BE1CBFA395006B6716 /* PBFViewTools.h */,
-				7CE477BF1CBFA395006B6716 /* PBFViewTools.m */,
-			);
-			name = PBFViewTools;
-			path = PBFViwTools;
-			sourceTree = "<group>";
-		};
 		7CFE27BD1CE4698A00FB11C5 /* PBFORMTools */ = {
 			isa = PBXGroup;
 			children = (
@@ -773,6 +772,7 @@
 				7CE477921CBF94D4006B6716 /* PBFNotificationTopBar.m in Sources */,
 				7CE476D81CBF945A006B6716 /* ViewController.m in Sources */,
 				7CE477A71CBF94D4006B6716 /* PBFUITextFieldAdditionFinishedBtn.m in Sources */,
+				7C1268EC1CEC0B270012AE57 /* PBFViewTools.m in Sources */,
 				7CE477AA1CBF94D4006B6716 /* PBFUITextFieldStratageMinlength.m in Sources */,
 				7CFE27C01CE4699400FB11C5 /* PBFORMTools.m in Sources */,
 				7CE477A91CBF94D4006B6716 /* PBFUITextFieldStratageMaxLength.m in Sources */,
@@ -798,7 +798,6 @@
 				7CE477931CBF94D4006B6716 /* PBFPopInputView.m in Sources */,
 				7CE4778E1CBF94D4006B6716 /* PBFImageProminent.m in Sources */,
 				7CE477981CBF94D4006B6716 /* mask.c in Sources */,
-				7CE477C01CBFA395006B6716 /* PBFViewTools.m in Sources */,
 				7CE477991CBF94D4006B6716 /* mmask.c in Sources */,
 				7CE477A81CBF94D4006B6716 /* PBFUITextFieldAdditionPickup.m in Sources */,
 				7CE4779D1CBF94D4006B6716 /* qrspec.c in Sources */,
