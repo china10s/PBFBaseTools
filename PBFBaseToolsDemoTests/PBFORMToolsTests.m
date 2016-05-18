@@ -25,6 +25,9 @@
 @property (nonatomic,strong)NSMutableArray                          *followers;
 @property (nonatomic,strong)NSArray                                 *date;
 @property (nonatomic,strong)PBFORMToolsTestModelFollower            *mainFollower;
+
+@property (nonatomic,strong)NSString                                *strNullTest;
+@property (nonatomic,strong)NSNumber                                *nNullTest;
 @end
 @implementation PBFORMToolsTestModelUser
 - (instancetype)init{
@@ -75,10 +78,22 @@
     [dicAttFollowerMain setValue:[NSNumber numberWithDouble:789.23] forKey:@"code"];
     [dicAttUser setValue:dicAttFollowerMain forKey:@"mainFollower"];
     
-    //work
-    PBFORMToolsTestModelUser *userInfo = [[PBFORMToolsTestModelUser alloc] init];
-    [PBFORMTools assembleDictionaryData:userInfo objRes:dicAttUser];
+#pragma mark - 默认方式
+    PBFORMToolsTestModelUser *userInfoDefault = [[PBFORMToolsTestModelUser alloc] init];
+    [PBFORMTools assembleDictionaryData:userInfoDefault objRes:dicAttUser];
+    //断言
+    XCTAssertEqual(userInfoDefault.name, @"朱林",@"name error");
+    XCTAssertEqual([userInfoDefault.code integerValue], 123456,@"code error");
+    XCTAssertEqual([userInfoDefault.followers count],2 ,@"followers error");
+    XCTAssertEqual([userInfoDefault.date count],2 ,@"date error");
+    XCTAssertEqual(userInfoDefault.mainFollower.name, @"王五",@"mainFollower.name error");
+    XCTAssertEqual([userInfoDefault.mainFollower.code doubleValue], 789.23,@"mainFollower.code error");
+    XCTAssertNil(userInfoDefault.strNullTest);
+    XCTAssertNil(userInfoDefault.nNullTest);
     
+#pragma mark - 初始化方式
+    PBFORMToolsTestModelUser *userInfo = [[PBFORMToolsTestModelUser alloc] init];
+    [PBFORMTools assembleDictionaryData:userInfo objRes:dicAttUser mode:PBFORMToolsAssembleModelInitNull];
     //断言
     XCTAssertEqual(userInfo.name, @"朱林",@"name error");
     XCTAssertEqual([userInfo.code integerValue], 123456,@"code error");
@@ -86,6 +101,8 @@
     XCTAssertEqual([userInfo.date count],2 ,@"date error");
     XCTAssertEqual(userInfo.mainFollower.name, @"王五",@"mainFollower.name error");
     XCTAssertEqual([userInfo.mainFollower.code doubleValue], 789.23,@"mainFollower.code error");
+    XCTAssertNotNil(userInfo.strNullTest);
+    XCTAssertNotNil(userInfo.nNullTest);
 }
 
 - (void)testExample {
