@@ -57,7 +57,14 @@
                     //设置值
                     object_setIvar(objDes, varTmpDes, objValueRes);
                 }
-                //2.2.3、NSDictionary类型
+                //2.2.3、NSDate类型
+                else if([objValueRes isKindOfClass:[NSDate class]] && [strIvarTypeDes containsString:@"NSNumber"]){
+                    long lTimeStamp = [(NSNumber*)objValueRes longLongValue];
+                    NSDate *dateRes = [NSDate dateWithTimeIntervalSince1970:lTimeStamp];
+                    //设置值
+                    object_setIvar(objDes, varTmpDes, dateRes);
+                }
+                //2.2.4、NSDictionary类型
                 //如属于NSDictionary、且Class该属性类型不属于上述类型，递归调用 assembleDictionaryData
                 else if ([objValueRes isKindOfClass:[NSDictionary class]]) {
                     //设置值
@@ -66,7 +73,7 @@
                     [PBFORMTools assembleDictionaryData:objDesDic objRes:(NSDictionary*)objValueRes];
                     object_setIvar(objDes, varTmpDes, objDesDic);
                 }
-                //2.2.4、NSArray类型
+                //2.2.5、NSArray类型
                 //如类型属于NSArray、循环递归 assembleArrayData
                 else if ([objValueRes isKindOfClass:[NSArray class]]) {
                     //设置值
@@ -105,7 +112,14 @@
                     //设置值
                     [objDes setValue:objValueRes forKey:strAttName];
                 }
-                //2.2.3、NSDictionary类型
+                //2.2.3、NSDate类型
+                else if([objValueRes isKindOfClass:[NSDate class]] && [strAttType containsString:@"NSNumber"]){
+                    long lTimeStamp = [(NSNumber*)objValueRes longLongValue];
+                    NSDate *dateRes = [NSDate dateWithTimeIntervalSince1970:lTimeStamp];
+                    //设置值
+                    [objDes setValue:dateRes forKey:strAttName];
+                }
+                //2.2.4、NSDictionary类型
                 //如属于NSDictionary、且Class该属性类型不属于上述类型，递归调用 assembleDictionaryData
                 else if ([objValueRes isKindOfClass:[NSDictionary class]]) {
                     //设置值

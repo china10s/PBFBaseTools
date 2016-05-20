@@ -22,6 +22,7 @@
 @property (nonatomic,strong)NSMutableDictionary                     *KPBFORMToolsDicArrayName;
 @property (nonatomic,strong)NSString                                *name;
 @property (nonatomic,strong)NSNumber                                *code;
+@property (nonatomic,strong)NSDate                                  *bornDate;
 @property (nonatomic,strong)NSMutableArray                          *followers;
 @property (nonatomic,strong)NSArray                                 *date;
 @property (nonatomic,strong)PBFORMToolsTestModelFollower            *mainFollower;
@@ -60,6 +61,7 @@
     NSMutableDictionary *dicAttUser = [[NSMutableDictionary alloc] init];
     [dicAttUser setValue:@"朱林" forKey:@"name"];
     [dicAttUser setValue:[NSNumber numberWithInt:123456] forKey:@"code"];
+    [dicAttUser setValue:[NSNumber numberWithInt:1463726903] forKey:@"bornDate"];
     //followers
     NSMutableDictionary *dicAttFollower1 = [[NSMutableDictionary alloc] init];
     [dicAttFollower1 setValue:@"张三" forKey:@"name"];
@@ -78,12 +80,17 @@
     [dicAttFollowerMain setValue:[NSNumber numberWithDouble:789.23] forKey:@"code"];
     [dicAttUser setValue:dicAttFollowerMain forKey:@"mainFollower"];
     
+    NSDateFormatter *formate = [[NSDateFormatter alloc] init];
+    formate.dateFormat = @"yyyy/MM/dd HH:mm:ss";
+    NSDate *bornDate = [formate dateFromString:@"2016/5/20 14:48:23"];
+    
 #pragma mark - 默认方式
     PBFORMToolsTestModelUser *userInfoDefault = [[PBFORMToolsTestModelUser alloc] init];
     [PBFORMTools assembleDictionaryData:userInfoDefault objRes:dicAttUser];
     //断言
     XCTAssertEqual(userInfoDefault.name, @"朱林",@"name error");
     XCTAssertEqual([userInfoDefault.code integerValue], 123456,@"code error");
+    XCTAssertTrue([userInfoDefault.bornDate compare:bornDate] == NSOrderedSame,@"date error");
     XCTAssertEqual([userInfoDefault.followers count],2 ,@"followers error");
     XCTAssertEqual([userInfoDefault.date count],2 ,@"date error");
     XCTAssertEqual(userInfoDefault.mainFollower.name, @"王五",@"mainFollower.name error");
@@ -97,6 +104,7 @@
     //断言
     XCTAssertEqual(userInfo.name, @"朱林",@"name error");
     XCTAssertEqual([userInfo.code integerValue], 123456,@"code error");
+    XCTAssertTrue([userInfoDefault.bornDate compare:bornDate] == NSOrderedSame,@"date error");
     XCTAssertEqual([userInfo.followers count],2 ,@"followers error");
     XCTAssertEqual([userInfo.date count],2 ,@"date error");
     XCTAssertEqual(userInfo.mainFollower.name, @"王五",@"mainFollower.name error");
