@@ -10,9 +10,11 @@
 
 @interface PBFSpringEffectAlertView()
 //内容View
-@property (nonatomic,strong)UIView                  *VIEWContent;
+@property (nonatomic,strong)UIView                                  *VIEWContent;
 //背景View
-@property (nonatomic,strong)UIView                  *VIEWBackground;
+@property (nonatomic,strong)UIView                                  *VIEWBackground;
+//背景View
+@property (nonatomic,assign)PBFSpringEffectAlertViewDisappearType   disappearType;
 @end
 
 @implementation PBFSpringEffectAlertView
@@ -30,12 +32,21 @@
 
 /////////////////////////////////////////////////////////////////
 - (instancetype)initWithSize:(CGSize)size{
+    self = [self initWithSize:size disappearType:PBFSpringEffectAlertViewDisappearTypeBackgroundTapDisable];
+    return self;
+}
+
+- (instancetype)initWithSize:(CGSize)size disappearType:(PBFSpringEffectAlertViewDisappearType)disappearType{
+    self.disappearType = disappearType;
     self = [super initWithFrame:[UIScreen mainScreen].bounds];
     [self setBackgroundColor:[UIColor clearColor]];
     
     //半透明背景
     self.VIEWBackground = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.VIEWBackground setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.7f]];
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickBanckgroundView:)];
+    [tapGesture setNumberOfTapsRequired:1];
+    [self.VIEWBackground addGestureRecognizer:tapGesture];
     [self addSubview:self.VIEWBackground];
     
     //白色内容框
@@ -45,7 +56,6 @@
     [self.VIEWContent.layer setCornerRadius:3.0f];
     self.VIEWContent.center = CGPointMake(rect.size.width/2, rect.size.height/2);
     [self addSubview:self.VIEWContent];
-    
     return self;
 }
 
@@ -84,6 +94,12 @@
             [self removeFromSuperview];
         }
     }];
+}
+
+- (void)clickBanckgroundView:(UITapGestureRecognizer*)gester{
+    if (self.disappearType == PBFSpringEffectAlertViewDisappearTypeBackgroundTapEnable) {
+        [self hide];
+    }
 }
 
 @end

@@ -6,13 +6,20 @@
 //  Copyright © 2016年 BY-MAC01. All rights reserved.
 //
 //
-//跳跃动态弹框
+//  动态弹出框
 
 #import <UIKit/UIKit.h>
+
+typedef enum {
+    PBFSpringEffectAlertViewDisappearTypeBackgroundTapEnable,
+    PBFSpringEffectAlertViewDisappearTypeBackgroundTapDisable
+}PBFSpringEffectAlertViewDisappearType;
 
 @interface PBFSpringEffectAlertView : UIView
 
 - (instancetype)initWithSize:(CGSize)size;
+
+- (instancetype)initWithSize:(CGSize)size disappearType:(PBFSpringEffectAlertViewDisappearType)disappearType;
 
 //弹出
 - (void)show;
