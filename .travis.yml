@@ -2,4 +2,4 @@ language: objective-c
 xcode_project: ./PBFBaseToolsDemo.xcodeproj
 xcode_scheme: PBFBaseToolsDemo
 osx_image: xcode7.3
-script: xcodebuild test -project PBFBaseToolsDemo.xcodeproj -scheme PBFBaseToolsDemo -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+script: xcodebuild test -xcworkspace PBFBaseToolsDemo.xcworkspace -scheme PBFBaseToolsDemo -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
