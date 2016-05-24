@@ -93,6 +93,7 @@
 		7C1268EB1CEC0B270012AE57 /* PBFViewTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBFViewTools.m; sourceTree = "<group>"; };
 		7C203DFA1CF457D100D554D5 /* PBFDropSelectBoxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBFDropSelectBoxView.h; sourceTree = "<group>"; };
 		7C203DFB1CF457D100D554D5 /* PBFDropSelectBoxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBFDropSelectBoxView.m; sourceTree = "<group>"; };
+		7C203DFD1CF45F0C00D554D5 /* PBFViewMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PBFViewMacro.h; path = ../PBFViewMacro.h; sourceTree = "<group>"; };
 		7CE476CD1CBF945A006B6716 /* PBFBaseToolsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PBFBaseToolsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CE476D11CBF945A006B6716 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7CE476D31CBF945A006B6716 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -247,6 +248,7 @@
 		7C1268E91CEC0B270012AE57 /* PBFViewTools */ = {
 			isa = PBXGroup;
 			children = (
+				7C203DFD1CF45F0C00D554D5 /* PBFViewMacro.h */,
 				7C1268EA1CEC0B270012AE57 /* PBFViewTools.h */,
 				7C1268EB1CEC0B270012AE57 /* PBFViewTools.m */,
 			);
