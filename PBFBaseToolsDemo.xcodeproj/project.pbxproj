@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7C1268EC1CEC0B270012AE57 /* PBFViewTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1268EB1CEC0B270012AE57 /* PBFViewTools.m */; };
+		7C203DFC1CF457D100D554D5 /* PBFDropSelectBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C203DFB1CF457D100D554D5 /* PBFDropSelectBoxView.m */; };
 		7CE476D21CBF945A006B6716 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE476D11CBF945A006B6716 /* main.m */; };
 		7CE476D51CBF945A006B6716 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE476D41CBF945A006B6716 /* AppDelegate.m */; };
 		7CE476D81CBF945A006B6716 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CE476D71CBF945A006B6716 /* ViewController.m */; };
@@ -90,6 +91,8 @@
 /* Begin PBXFileReference section */
 		7C1268EA1CEC0B270012AE57 /* PBFViewTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBFViewTools.h; sourceTree = "<group>"; };
 		7C1268EB1CEC0B270012AE57 /* PBFViewTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBFViewTools.m; sourceTree = "<group>"; };
+		7C203DFA1CF457D100D554D5 /* PBFDropSelectBoxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBFDropSelectBoxView.h; sourceTree = "<group>"; };
+		7C203DFB1CF457D100D554D5 /* PBFDropSelectBoxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBFDropSelectBoxView.m; sourceTree = "<group>"; };
 		7CE476CD1CBF945A006B6716 /* PBFBaseToolsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PBFBaseToolsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CE476D11CBF945A006B6716 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7CE476D31CBF945A006B6716 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -250,6 +253,15 @@
 			path = PBFViewTools;
 			sourceTree = "<group>";
 		};
+		7C203DF91CF457D100D554D5 /* PBFDropSelectBoxTools */ = {
+			isa = PBXGroup;
+			children = (
+				7C203DFA1CF457D100D554D5 /* PBFDropSelectBoxView.h */,
+				7C203DFB1CF457D100D554D5 /* PBFDropSelectBoxView.m */,
+			);
+			path = PBFDropSelectBoxTools;
+			sourceTree = "<group>";
+		};
 		7CE476C41CBF945A006B6716 = {
 			isa = PBXGroup;
 			children = (
@@ -319,6 +331,7 @@
 		7CE477061CBF94D3006B6716 /* PBFBaseTools */ = {
 			isa = PBXGroup;
 			children = (
+				7C203DF91CF457D100D554D5 /* PBFDropSelectBoxTools */,
 				7C1268E91CEC0B270012AE57 /* PBFViewTools */,
 				7CFE27BD1CE4698A00FB11C5 /* PBFORMTools */,
 				7CE477071CBF94D3006B6716 /* PBFBasisTools */,
@@ -883,6 +896,7 @@
 				7CE477AB1CBF94D4006B6716 /* PBFUITextFieldStratageRegex.m in Sources */,
 				7CE477881CBF94D4006B6716 /* GTMBase64.m in Sources */,
 				7CE4779C1CBF94D4006B6716 /* qrinput.c in Sources */,
+				7C203DFC1CF457D100D554D5 /* PBFDropSelectBoxView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
