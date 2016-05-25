@@ -14,6 +14,8 @@
 
 @interface PBFNotifyLoadingViewTools : NSObject
 + (instancetype)sharedInstance;
+//显示菊花等待框子
+- (void)showLoadingView:(BOOL)showShadow;
 //颤抖菊花等待框
 - (void)showLoadingView:(UIView *)parentView showShadow:(BOOL)showShadow;
 //显示菊花等待框子

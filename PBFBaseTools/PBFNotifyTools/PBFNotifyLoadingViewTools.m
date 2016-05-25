@@ -36,6 +36,11 @@
 }
 
 //显示菊花等待框子
+- (void)showLoadingView:(BOOL)showShadow{
+    [self showLoadingView:[UIApplication sharedApplication].keyWindow strMess:@"请等待" showShadow:showShadow];
+}
+
+//显示菊花等待框子
 - (void)showLoadingView:(UIView *)parentView showShadow:(BOOL)showShadow{
     [self showLoadingView:parentView strMess:@"请等待" showShadow:showShadow];
 }

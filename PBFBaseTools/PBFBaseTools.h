@@ -10,7 +10,8 @@
 #define PBFBaseTools_h
 
 #pragma mark - PBFViewTools UIView工具
-#import "PBFViewMacro.h"
+#import "PBFMacroView.h"
+#import "PBFMacroData.h"
 #import "PBFViewTools.h"
 #import "PBFDropSelectBoxView.h"
 
