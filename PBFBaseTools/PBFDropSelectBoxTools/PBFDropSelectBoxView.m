@@ -26,6 +26,7 @@ const static int kPBFDropSelectBoxViewRowHieght    = 44;
     [self setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0]];
     self.startPnt = startPnt;
     self.width = width;
+    self.isHide = TRUE;
     //增加点击手势
     UITapGestureRecognizer  *gester = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickHide:)];
     [gester setNumberOfTapsRequired:1];
@@ -54,6 +55,10 @@ const static int kPBFDropSelectBoxViewRowHieght    = 44;
 
 //弹出
 - (void)showViewInner:(BOOL)isUpper parentView:(UIView*)parentView showShadow:(BOOL)showShadow{
+    if (!self.isHide) {
+        return;
+    }
+    self.isHide = FALSE;
     //加载到背景View上去
     if (parentView) {
         [parentView addSubview:self];
@@ -87,10 +92,16 @@ const static int kPBFDropSelectBoxViewRowHieght    = 44;
 
 //手动关闭
 - (void)hide{
-    [UIView animateWithDuration:0.3f animations:^{
+    [UIView animateWithDuration:0.6f animations:^{
         [self.tbMainView setFrame:self.rectOld];
-        [self setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0]];
-        [self removeFromSuperview];
+        [UIView animateWithDuration:0.3f animations:^{
+            [self setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0]];
+            [self removeFromSuperview];
+            self.isHide = TRUE;
+            if(self.delegateSelf){
+                [self.delegateSelf hideFinished];
+            }
+        }];
     }];
 }
 

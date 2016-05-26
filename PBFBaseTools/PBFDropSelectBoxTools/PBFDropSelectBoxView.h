@@ -23,14 +23,19 @@
 @protocol PBFDropSelectBoxViewDelegate <NSObject>
 //选中行
 - (void)selRow:(PBFDropSelectBoxView*)sender iSelRow:(int)iSelRow;
+//收起
+- (void)hideFinished;
 @end
 
 @interface PBFDropSelectBoxView : UIView
 
+- (instancetype)initWithAppearLine:(CGPoint)startPnt width:(float)width;
+
+//是否隐藏中
+@property (nonatomic,assign)BOOL                                    isHide;
 @property (nonatomic,strong)id<PBFDropSelectBoxViewDatasource>      datasourceSelf;
 @property (nonatomic,strong)id<PBFDropSelectBoxViewDelegate>        delegateSelf;
 
-- (instancetype)initWithAppearLine:(CGPoint)startPnt width:(float)width;
 
 //展示下拉列表
 - (void)showUp:(UIView*)parentView showShadow:(BOOL)showShadow;
