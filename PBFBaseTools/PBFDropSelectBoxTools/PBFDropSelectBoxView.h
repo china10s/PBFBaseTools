@@ -32,6 +32,8 @@
 - (instancetype)initWithAppearLine:(CGPoint)startPnt width:(float)width;
 
 //是否隐藏中
+//行高度
+@property (nonatomic,assign)int                                     rowHeight;
 @property (nonatomic,assign)BOOL                                    isHide;
 @property (nonatomic,strong)id<PBFDropSelectBoxViewDatasource>      datasourceSelf;
 @property (nonatomic,strong)id<PBFDropSelectBoxViewDelegate>        delegateSelf;

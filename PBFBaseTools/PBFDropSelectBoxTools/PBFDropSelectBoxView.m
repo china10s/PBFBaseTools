@@ -10,8 +10,6 @@
 
 //最大行数
 const static int kPBFDropSelectBoxViewMaxRowNumber = 100;
-//行高度
-const static int kPBFDropSelectBoxViewRowHieght    = 44;
 
 @interface PBFDropSelectBoxView()
 @property(nonatomic,assign)CGPoint                  startPnt;
@@ -27,6 +25,7 @@ const static int kPBFDropSelectBoxViewRowHieght    = 44;
     self.startPnt = startPnt;
     self.width = width;
     self.isHide = TRUE;
+    self.rowHeight = 44;
     //增加点击手势
     UITapGestureRecognizer  *gester = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickHide:)];
     [gester setNumberOfTapsRequired:1];
@@ -69,12 +68,12 @@ const static int kPBFDropSelectBoxViewRowHieght    = 44;
     //计算位置
     [self calculateRow];
     CGRect rectMainViewBegin = CGRectMake(self.startPnt.x, self.startPnt.y, self.width, 0);
-    CGRect rectMainViewEnd = CGRectMake(self.startPnt.x, self.startPnt.y - kPBFDropSelectBoxViewRowHieght*self.tbMainView.tag, self.width, kPBFDropSelectBoxViewRowHieght*self.tbMainView.tag);
+    CGRect rectMainViewEnd = CGRectMake(self.startPnt.x, self.startPnt.y - self.rowHeight*self.tbMainView.tag, self.width, self.rowHeight*self.tbMainView.tag);
     if(isUpper){//向上弹出
-        rectMainViewEnd = CGRectMake(self.startPnt.x, self.startPnt.y - kPBFDropSelectBoxViewRowHieght*self.tbMainView.tag, self.width, kPBFDropSelectBoxViewRowHieght*self.tbMainView.tag);
+        rectMainViewEnd = CGRectMake(self.startPnt.x, self.startPnt.y - self.rowHeight*self.tbMainView.tag, self.width, self.rowHeight*self.tbMainView.tag);
     }
     else{//向下弹出
-        rectMainViewEnd = CGRectMake(self.startPnt.x, self.startPnt.y, self.width, kPBFDropSelectBoxViewRowHieght*self.tbMainView.tag);
+        rectMainViewEnd = CGRectMake(self.startPnt.x, self.startPnt.y, self.width, self.rowHeight*self.tbMainView.tag);
         [self.tbMainView reloadData];
     }
     [self.tbMainView reloadData];
@@ -126,14 +125,24 @@ const static int kPBFDropSelectBoxViewRowHieght    = 44;
     return self.tbMainView.tag;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return self.rowHeight;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"defaultCell"];
+    cell.accessoryType = UITableViewCellAccessoryNone;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     //增加行内容
-    UILabel *labTitle = [[UILabel alloc] initWithFrame:CGRectMake(0,0, self.width, kPBFDropSelectBoxViewRowHieght)];
+    UILabel *labTitle = [[UILabel alloc] initWithFrame:CGRectMake(0,0, self.width, self.rowHeight)];
     [labTitle setText:[self.datasourceSelf getTitleForRow:[indexPath row]]];
     [labTitle setFont:[UIFont systemFontOfSize:15.0f]];
     [labTitle setTextAlignment:NSTextAlignmentCenter];
+    UITapGestureRecognizer *gester = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickSelCell:)];
+    [gester setNumberOfTapsRequired:1];
+    [labTitle addGestureRecognizer:gester];
+    [labTitle setUserInteractionEnabled:TRUE];
+    [labTitle setTag:[indexPath row]];
     //判断是否当前选中
     if (self.datasourceSelf) {
         int iSelRow = [self.datasourceSelf getSelectedRow];
@@ -143,21 +152,31 @@ const static int kPBFDropSelectBoxViewRowHieght    = 44;
     }
     [cell.contentView addSubview:labTitle];
     //下划线
-    UIView *viewLine = [[UIView alloc] initWithFrame:CGRectMake(0, kPBFDropSelectBoxViewRowHieght-1, [UIScreen mainScreen].bounds.size.width, 1)];
+    UIView *viewLine = [[UIView alloc] initWithFrame:CGRectMake(0, self.rowHeight-1, [UIScreen mainScreen].bounds.size.width, 1)];
     [viewLine setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
     [cell.contentView addSubview:viewLine];
     return cell;
 }
 
-
-- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(6_0){
-    return TRUE;
-}
-
-- (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(6_0){
-    [self.delegateSelf selRow:self iSelRow:[indexPath row]];
+- (void)clickSelCell:(UITapGestureRecognizer*)gester{
+    [self.delegateSelf selRow:self iSelRow:gester.self.view.tag];
     [self hide];
 }
+
+- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(6_0){
+    return FALSE;
+}
+//
+//- (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(6_0){
+//    [self.delegateSelf selRow:self iSelRow:[indexPath row]];
+//    [self hide];
+//}
+//
+//-(BOOL)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+//    [self.delegateSelf selRow:self iSelRow:[indexPath row]];
+//    [self hide];
+//    return TRUE;
+//}
 
 #pragma mark - getter and setter
 - (UITableView*)tbMainView{
@@ -167,6 +186,7 @@ const static int kPBFDropSelectBoxViewRowHieght    = 44;
         [_tbMainView setDataSource:self];
         [_tbMainView.layer setBorderWidth:1.0f];
         [_tbMainView.layer setBorderColor:[UIColor groupTableViewBackgroundColor].CGColor];
+        [_tbMainView setBounces:FALSE];
         [self calculateRow];
     }
     return _tbMainView;
